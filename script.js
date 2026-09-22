@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ---------- 1. Menu hamburger ---------- */
+  /* menu hamburger*/
   const menuBtn = document.getElementById("menuBtn");
   const menu = document.getElementById("menu");
 
@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.toggle("open");
   });
 
-  // Đóng menu khi bấm 1 link (trên mobile)
+  // đóng menu khi bấm 1 link (trên mobile)
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       menu.classList.remove("open");
     });
   });
 
-  /* ---------- 2. Dark / Light mode ---------- */
+  /*dark / light mode */
   const themeBtn = document.getElementById("themeBtn");
   const savedTheme = localStorage.getItem("theme");
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 
-  /* ---------- 3. Smooth scroll ---------- */
+  /* Smooth scroll */
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
       const target = document.querySelector(link.getAttribute("href"));
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ---------- 4. Đếm ký tự nội dung liên hệ ---------- */
+  /*Đếm ký tự nội dung liên hệ */
   const message = document.getElementById("message");
   const charCount = document.getElementById("charCount");
   const MAX_LENGTH = message.getAttribute("maxlength");
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     charCount.textContent = `${message.value.length}/${MAX_LENGTH}`;
   });
 
-  /* ---------- 5. Validate form liên hệ ---------- */
+  /*5. Validate form liên hệ */
   const form = document.getElementById("contactForm");
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let isValid = true;
 
-    // Họ tên: không được để trống, ít nhất 2 ký tự
+    // Họ tên
     if (nameInput.value.trim().length < 2) {
       showError(nameInput, nameError, "Vui lòng nhập họ tên (ít nhất 2 ký tự).");
       isValid = false;
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearError(nameInput, nameError);
     }
 
-    // Email: đúng định dạng
+    // Email
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailInput.value.trim())) {
       showError(emailInput, emailError, "Email không hợp lệ.");
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearError(emailInput, emailError);
     }
 
-    // Số điện thoại: 9-11 chữ số
+    // Số điện thoại
     const phonePattern = /^[0-9]{9,11}$/;
     if (!phonePattern.test(phoneInput.value.trim())) {
       showError(phoneInput, phoneError, "Số điện thoại phải gồm 9-11 chữ số.");
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearError(phoneInput, phoneError);
     }
 
-    // Nội dung: không được để trống
+    // Nội dung
     if (message.value.trim().length < 5) {
       showError(message, messageError, "Nội dung cần ít nhất 5 ký tự.");
       isValid = false;
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* ---------- 6. Năm hiện tại ở footer ---------- */
+  /*năm hiện tại ở footer*/
   document.getElementById("currentYear").textContent = new Date().getFullYear();
 
 });

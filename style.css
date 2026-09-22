@@ -1,4 +1,4 @@
-/* ---------- Reset & base ---------- */
+/*reset & base*/
 * {
     margin: 0;
     padding: 0;
@@ -46,7 +46,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ---------- Header / Nav ---------- */
+/*header / Nav*/
 header {
     background-color: var(--header-bg);
     color: var(--header-text);
@@ -116,7 +116,7 @@ nav h2 {
     text-decoration: none;
 }
 
-/* ---------- Main content ---------- */
+/*main content*/
 main {
     max-width: 900px;
     margin: 0 auto;
@@ -165,7 +165,7 @@ ul.skills li:hover {
     transform: translateY(-2px);
 }
 
-/* ---------- Contact form ---------- */
+/*Contact form*/
 footer {
     background-color: var(--header-bg);
     color: var(--header-text);
@@ -258,7 +258,7 @@ footer > p {
     opacity: 0.75;
 }
 
-/* ---------- Tablet (>= 600px) ---------- */
+/* tablet (>= 600px)*/
 @media (min-width: 600px) {
     #menuBtn {
         display: none;
@@ -308,7 +308,7 @@ footer > p {
     }
 }
 
-/* ---------- Desktop (>= 900px) ---------- */
+/*Desktop (>= 900px)*/
 @media (min-width: 900px) {
     nav {
         padding: 1rem 2rem;
